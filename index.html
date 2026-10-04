@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Complaint Analyzer</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>Smart Complaint Analyzer</h1>
+            <p>Analyze complaints and automatically determine category, urgency and priority.</p>
+        </header>
+
+        <section class="input-card">
+
+            <h2>Submit Complaint</h2>
+
+            <textarea
+                id="complaint"
+                placeholder="Example: There is a large amount of garbage near our street and it has not been collected for three days..."
+            ></textarea>
+
+            <button onclick="analyzeComplaint()">
+                Analyze Complaint
+            </button>
+
+            <button class="sample-btn" onclick="loadSample()">
+                Load Sample
+            </button>
+
+        </section>
+
+
+        <section id="result" class="result-section hidden">
+
+            <h2>Analysis Result</h2>
+
+            <div class="result-grid">
+
+                <div class="result-box">
+                    <span>Category</span>
+                    <strong id="category">-</strong>
+                </div>
+
+                <div class="result-box">
+                    <span>Department</span>
+                    <strong id="department">-</strong>
+                </div>
+
+                <div class="result-box">
+                    <span>Urgency</span>
+                    <strong id="urgency">-</strong>
+                </div>
+
+                <div class="result-box">
+                    <span>Priority Score</span>
+                    <strong id="priority">-</strong>
+                </div>
+
+            </div>
+
+
+            <div class="analysis-card">
+
+                <h3>Detected Keywords</h3>
+
+                <div id="keywords"></div>
+
+            </div>
+
+
+            <div class="analysis-card">
+
+                <h3>Complaint Summary</h3>
+
+                <p id="summary"></p>
+
+            </div>
+
+
+            <div class="analysis-card">
+
+                <h3>Recommended Action</h3>
+
+                <p id="action"></p>
+
+            </div>
+
+        </section>
+
+
+        <section class="history-section">
+
+            <div class="history-header">
+
+                <h2>Complaint History</h2>
+
+                <button class="clear-btn" onclick="clearHistory()">
+                    Clear History
+                </button>
+
+            </div>
+
+            <div id="history"></div>
+
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
